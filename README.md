@@ -55,3 +55,46 @@ This is a simplified educational simulation. It does not verify physical vehicle
 - `src/main.jsx` — React app, demo data, views and interactions
 - `src/priorityEngine.js` — scoring, ranking, recommendation and conflict detection
 - `src/styles.css` — responsive dark navy dashboard styling
+
+## Backend integration (React + Express + MongoDB)
+
+The frontend now authenticates against the Express API and loads ambulance, signal, and event records from MongoDB. Creating an emergency, granting priority, restoring signals, and event logging call the API.
+
+### 1. Start MongoDB
+
+Make sure the local MongoDB service is running on `mongodb://127.0.0.1:27017`.
+
+### 2. Start the API
+
+Open a terminal in the project root:
+
+```powershell
+cd server
+npm install
+Copy-Item .env.example .env
+npm run dev
+```
+
+The API runs at `http://localhost:5000`. Check `http://localhost:5000/api/health`.
+
+Demo operator login:
+
+- Email: `operator@pulseroute.demo`
+- Password: `demo1234`
+
+### 3. Start the frontend
+
+Open a second terminal in the project root (not in `server`):
+
+```powershell
+npm install
+npm run dev
+```
+
+Open the Vite URL, usually `http://localhost:5173`.
+
+If your frontend runs on a different port, set `CLIENT_ORIGIN` in `server/.env` to match it, and restart the API. To change the API URL for the frontend, copy root `.env.example` to root `.env`.
+
+### Important prototype limits
+
+This is an educational simulation. The priority score is deterministic rule-based logic, positions are simulated, and the system is not connected to live GPS, real traffic data, or physical traffic controllers. Change the development JWT secret before any non-demo deployment; configure authentication, authorization, validation, and operational safety controls before exposing the API publicly.
