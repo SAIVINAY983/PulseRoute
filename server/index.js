@@ -1292,6 +1292,18 @@ const server = app.listen(PORT, () => {
   console.log(`PulseRoute Express API active at http://localhost:${PORT}`);
 });
 
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n======================================================`);
+    console.error(`[PulseRoute Error] Port ${PORT} is ALREADY IN USE!`);
+    console.error(`Another terminal or server process is already running.`);
+    console.error(`Please close your other running server terminal.`);
+    console.error(`======================================================\n`);
+  } else {
+    console.error('Server listen error:', err.message);
+  }
+});
+
 // Resilient MongoDB Connection Worker (Non-blocking with retry)
 function connectMongo() {
   mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 3000 })
