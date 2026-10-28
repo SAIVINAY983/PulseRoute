@@ -7,6 +7,15 @@
 
 ---
 
+### 🌐 Live Production Deployment
+- **Live Web Application (Vercel):** [https://pulse-route-sage.vercel.app](https://pulse-route-sage.vercel.app)
+- **Live REST API (Render):** [https://pulseroute-5q2w.onrender.com](https://pulseroute-5q2w.onrender.com)
+- **API Health Check:** [https://pulseroute-5q2w.onrender.com/api/health](https://pulseroute-5q2w.onrender.com/api/health)
+- **Database:** MongoDB Atlas Cloud
+- **Demo Credentials:** `operator@pulseroute.demo` / `demo1234`
+
+---
+
 ## 1. Project Overview & Features
 
 PulseRoute is a full-stack smart-city emergency dispatch and traffic management command center. It models how municipal emergency vehicles can receive deterministic green-corridor priority through congested urban intersections while guaranteeing safe two-stage clearance and rapid recovery to adaptive city traffic cycles.
