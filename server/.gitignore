@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+*.dump
+dumps/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Coverage and test output
+coverage/
+.nyc_output/
+test-results/

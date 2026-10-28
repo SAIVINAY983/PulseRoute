@@ -22,8 +22,19 @@ Thumbs.db
 *.swp
 *.swo
 
-# Environment variables
+# Environment variables and secrets
 .env
-.env.production
-.env.local
-.env.*.local
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+*.cert
+*.dump
+dumps/
+
+# Test output and coverage
+coverage/
+.nyc_output/
+test-results/
+
